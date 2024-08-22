@@ -1,7 +1,7 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
 
-void exibirMensagemDeBoasVindas()
+void exibirLorgo()
 {
     Console.WriteLine(@"
 
@@ -15,10 +15,9 @@ void exibirMensagemDeBoasVindas()
     Console.WriteLine(mensagemDeBoasVindas);
 }
 
-exibirMensagemDeBoasVindas();
-
 void ExibirOpcoesDoMenu()
 {
+    exibirLorgo();
     Console.WriteLine("\nDigite 1 para registrar uma banda");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
     Console.WriteLine("Digite 3 para avaliar uma banda");
@@ -34,7 +33,7 @@ void ExibirOpcoesDoMenu()
     
     switch (OpcaoEscolhidaNumerica)
     {
-        case 1: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
+        case 1: CadastrarBanda();
             break;
         case 2: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
             break;
@@ -49,4 +48,15 @@ void ExibirOpcoesDoMenu()
     }
 }
 
+void CadastrarBanda()
+{
+    Console.Clear(); // clear, é usado para limpar todo o conteúdo exibido na janela do console
+    Console.WriteLine("Registro de bandas");
+    Console.Write("Digite o nome da banda: ");
+    string NomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {NomeDaBanda} foi registrada com sucesso!");
+    Thread.Sleep(2000); // Thread, é usado para suspender a execução da thread atual por um período especificado de tempo
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
 ExibirOpcoesDoMenu();
