@@ -1,6 +1,6 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-
+List<string> listaDasBandas = new List<string>();
 void exibirLorgo()
 {
     Console.WriteLine(@"
@@ -54,6 +54,7 @@ void CadastrarBanda()
     Console.WriteLine("Registro de bandas");
     Console.Write("Digite o nome da banda: ");
     string NomeDaBanda = Console.ReadLine()!;
+    listaDasBandas.Add(NomeDaBanda);
     Console.WriteLine($"A banda {NomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000); // Thread, é usado para suspender a execução da thread atual por um período especificado de tempo
     Console.Clear();
