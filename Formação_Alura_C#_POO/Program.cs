@@ -35,7 +35,7 @@ void ExibirOpcoesDoMenu()
     {
         case 1: CadastrarBanda();
             break;
-        case 2: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
+        case 2: mostrarBandasRegistradas();
             break;
         case 3: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
             break;
@@ -60,4 +60,22 @@ void CadastrarBanda()
     Console.Clear();
     ExibirOpcoesDoMenu();
 }
+
+void mostrarBandasRegistradas()
+{
+    Console.Clear();
+    Console.WriteLine("************************");
+    Console.WriteLine("Exibindo todas as bandas registradas");
+    Console.WriteLine("************************");
+
+    for (int i = 0; i < listaDasBandas.Count; i++)/*é usado para definir o número de vezes que o loop deve ser executado, com base no número de elementos em uma coleção*/
+    {
+        Console.WriteLine($"Banda: {listaDasBandas[i]}");
+    }
+    Console.WriteLine("Digite uma tecla para voltar ao menu inicial");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesDoMenu(); 
+}
+
 ExibirOpcoesDoMenu();
