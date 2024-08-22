@@ -30,10 +30,22 @@ void ExibirOpcoesDoMenu()
     /*Ele é usado para suprimir avisos de nulidade que o compilador pode gerar em situações onde ele não tem certeza se um valor pode ser null,
      mas o programador sabe que o valor não será null em tempo de execução*/
 
-    int OpcaoEscolhidaNumerica = int.Parse(OpcaoEscolhida);
-    if (OpcaoEscolhidaNumerica == 1)
+    int OpcaoEscolhidaNumerica = int.Parse(OpcaoEscolhida); // o int.Parse, é utilizado para converter uma variavel do tipo string, em uma variavel do tipo numerica
+    
+    switch (OpcaoEscolhidaNumerica)
     {
-        Console.WriteLine("Você escolheu a opção 1");
+        case 1: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
+            break;
+        case 2: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
+            break;
+        case 3: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
+            break;
+        case 4: Console.WriteLine("Você escolheu a opção " + OpcaoEscolhidaNumerica);
+            break;
+        case -1: Console.WriteLine("Tchau Tchau");
+            break;
+        default: Console.WriteLine("Opção Inválida!");
+            break;
     }
 }
 
