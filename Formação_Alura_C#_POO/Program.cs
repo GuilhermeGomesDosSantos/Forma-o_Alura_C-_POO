@@ -51,7 +51,7 @@ void ExibirOpcoesDoMenu()
 void CadastrarBanda()
 {
     Console.Clear(); // clear, é usado para limpar todo o conteúdo exibido na janela do console
-    Console.WriteLine("Registro de bandas");
+    ExibirTituloDaOpcao("Registro de bandas");
     Console.Write("Digite o nome da banda: ");
     string NomeDaBanda = Console.ReadLine()!;
     listaDasBandas.Add(NomeDaBanda);
@@ -64,9 +64,7 @@ void CadastrarBanda()
 void mostrarBandasRegistradas()
 {
     Console.Clear();
-    Console.WriteLine("*************************************");
-    Console.WriteLine("Exibindo todas as bandas registradas");
-    Console.WriteLine("*************************************\n");
+    ExibirTituloDaOpcao("Exibindo todas as bandas registradas");
 
     /*for (int i = 0; i < listaDasBandas.Count; i++)/*é usado para definir o número de vezes que o loop deve ser executado, com base no número de elementos em uma coleção
     {
@@ -81,6 +79,16 @@ void mostrarBandasRegistradas()
     Console.ReadKey();
     Console.Clear();
     ExibirOpcoesDoMenu(); 
+}
+
+void ExibirTituloDaOpcao(string titulo)
+{
+    int quantidadeDeLetras = titulo.Length;
+    string asterisco = string.Empty.PadLeft(quantidadeDeLetras, '*');
+
+    Console.WriteLine(asterisco);
+    Console.WriteLine(titulo);
+    Console.WriteLine(asterisco + "\n");
 }
 
 ExibirOpcoesDoMenu();
