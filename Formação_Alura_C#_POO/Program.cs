@@ -1,6 +1,6 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-List<string> listaDasBandas = new List<string>();
+List<string> listaDasBandas = new List<string> {"U2", "The Beatles", "Calypso"};
 void exibirLorgo()
 {
     Console.WriteLine(@"
@@ -64,15 +64,20 @@ void CadastrarBanda()
 void mostrarBandasRegistradas()
 {
     Console.Clear();
-    Console.WriteLine("************************");
+    Console.WriteLine("*************************************");
     Console.WriteLine("Exibindo todas as bandas registradas");
-    Console.WriteLine("************************");
+    Console.WriteLine("*************************************\n");
 
-    for (int i = 0; i < listaDasBandas.Count; i++)/*é usado para definir o número de vezes que o loop deve ser executado, com base no número de elementos em uma coleção*/
+    /*for (int i = 0; i < listaDasBandas.Count; i++)/*é usado para definir o número de vezes que o loop deve ser executado, com base no número de elementos em uma coleção
     {
         Console.WriteLine($"Banda: {listaDasBandas[i]}");
+    }*/
+    foreach (string banda in listaDasBandas)// o foreach, itera sobre cada elemento na lista listaDasBandas, A cada iteração, o valor do elemento atual é atribuído à variável banda
+    {
+        Console.WriteLine($"Banda: {banda}");
     }
-    Console.WriteLine("Digite uma tecla para voltar ao menu inicial");
+
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu inicial");
     Console.ReadKey();
     Console.Clear();
     ExibirOpcoesDoMenu(); 
