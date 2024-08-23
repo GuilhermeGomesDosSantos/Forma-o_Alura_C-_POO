@@ -108,10 +108,20 @@ void AvaliarUmaBanda()
     Console.Clear();
     ExibirTituloDaOpcao("Avaliar bandas");
     Console.Write("Digite o nome da banda que deseja avaliar: ");
-    string nomeDaBanda = Console.ReadLine();
+    string nomeDaBanda = Console.ReadLine()!;
 
     if (bandasRegistradas.ContainsKey(nomeDaBanda))
     {
+        Console.Write($"Qual é a nota que a banda {nomeDaBanda} merece? ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasRegistradas[nomeDaBanda].Add(nota);//Você está acessando o valor associado à chave nomeDaBanda no dicionário bandasRegistradas
+        Console.WriteLine($"A nota {nota} foi adicionado com sucesso para a banda {nomeDaBanda}");//logo após, você está dizendo "adicione essa nova nota à lista de notas dessa banda específica"
+
+        Console.WriteLine("\nDigite uma tecla para voltar ao menu inicia");
+        Console.ReadKey();
+        Thread.Sleep(4000);
+        Console.Clear();
+        ExibirOpcoesDoMenu();
 
     } else
     {
