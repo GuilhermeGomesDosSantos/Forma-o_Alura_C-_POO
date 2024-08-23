@@ -1,6 +1,8 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-List<string> listaDasBandas = new List<string> {"U2", "The Beatles", "Calypso"};
+//List<string> listaDasBandas = new List<string> {"U2", "The Beatles", "Calypso"};
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+//é uma coleção que armazena pares de chave-valor, onde cada chave é única e está associada a um valor.
 void exibirLorgo()
 {
     Console.WriteLine(@"
@@ -85,7 +87,9 @@ void ExibirTituloDaOpcao(string titulo)
 {
     int quantidadeDeLetras = titulo.Length;
     string asterisco = string.Empty.PadLeft(quantidadeDeLetras, '*');
-
+    /*
+    é usado para criar uma nova string que é uma versão da string original,
+    mas com caracteres de preenchimento adicionados à esquerda até que a string atinja um comprimento especificado*/
     Console.WriteLine(asterisco);
     Console.WriteLine(titulo);
     Console.WriteLine(asterisco + "\n");
