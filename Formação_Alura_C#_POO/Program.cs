@@ -3,6 +3,9 @@ string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
 //List<string> listaDasBandas = new List<string> {"U2", "The Beatles", "Calypso"};
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
 //é uma coleção que armazena pares de chave-valor, onde cada chave é única e está associada a um valor.
+bandasRegistradas.Add("Banda 1", new List<int> { 10, 4, 6 });
+bandasRegistradas.Add("Banda 2", new List<int>());
+
 void exibirLorgo()
 {
     Console.WriteLine(@"
@@ -56,7 +59,7 @@ void CadastrarBanda()
     ExibirTituloDaOpcao("Registro de bandas");
     Console.Write("Digite o nome da banda: ");
     string NomeDaBanda = Console.ReadLine()!;
-    listaDasBandas.Add(NomeDaBanda);
+    bandasRegistradas.Add(NomeDaBanda, new List<int>());
     Console.WriteLine($"A banda {NomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000); // Thread, é usado para suspender a execução da thread atual por um período especificado de tempo
     Console.Clear();
@@ -72,7 +75,7 @@ void mostrarBandasRegistradas()
     {
         Console.WriteLine($"Banda: {listaDasBandas[i]}");
     }*/
-    foreach (string banda in listaDasBandas)// o foreach, itera sobre cada elemento na lista listaDasBandas, A cada iteração, o valor do elemento atual é atribuído à variável banda
+    foreach (string banda in bandasRegistradas.Keys)// o foreach, itera sobre cada elemento na lista listaDasBandas, A cada iteração, o valor do elemento atual é atribuído à variável banda
     {
         Console.WriteLine($"Banda: {banda}");
     }
