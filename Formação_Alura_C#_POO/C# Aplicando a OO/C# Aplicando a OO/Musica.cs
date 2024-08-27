@@ -3,7 +3,7 @@
     public string nome;
     public string artista;
     public int duracao;
-    private bool disponivel;
+    public bool Disponivel { get; set; }
 
     public void ExibirFichaTecnica()
     {
@@ -11,22 +11,13 @@
         Console.WriteLine($"Artista: {artista}");
         Console.WriteLine($"Duração: {duracao}");
 
-        if (disponivel)
+        if (Disponivel)
         {
             Console.WriteLine("Disponível no plano");
-        } else
+        }
+        else
         {
             Console.WriteLine("Adquira o plano Plus+");
         }
-    }
-
-    public void EscreveDisponivel (bool value)
-    {
-        disponivel = value;
-    }
-
-    public bool LeDisponivel()
-    {
-        return disponivel;
     }
 }
