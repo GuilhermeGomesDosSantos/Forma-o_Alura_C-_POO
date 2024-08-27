@@ -4,6 +4,7 @@ musica1.nome = "Roxane";
 musica1.artista = "The police";
 musica1.duracao = 273;
 musica1.disponivel = true;
+Console.WriteLine(musica1.disponivel);
 
 Musica musica2 = new Musica();
 
