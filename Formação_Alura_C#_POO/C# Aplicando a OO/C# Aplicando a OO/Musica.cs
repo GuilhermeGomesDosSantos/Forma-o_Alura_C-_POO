@@ -19,4 +19,14 @@
             Console.WriteLine("Adquira o plano Plus+");
         }
     }
+
+    public void EscreveDisponivel (bool value)
+    {
+        disponivel = value;
+    }
+
+    public bool LeDisponivel()
+    {
+        return disponivel;
+    }
 }
